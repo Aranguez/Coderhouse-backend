@@ -1,0 +1,8 @@
+<ul>
+  <% products.forEach(function(product){ %>
+    <li>
+      <%- include('../partials/product', { product }); %>
+    </li>
+  <% }); %>
+  <hr>
+</ul>
