@@ -23,7 +23,7 @@ app.get('/productos', (req, res) => {
 app.post('/productos', (req, res) => {
   const nuevoProducto = { ...req.body, id: Productos.getAll().length + 1 };
   Productos.add(nuevoProducto)
-  res.redirect('/productos');
+  res.redirect('/');
 });
 
 const PORT = process.env.PORT || 8080;

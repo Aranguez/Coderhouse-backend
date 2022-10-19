@@ -1,11 +1,37 @@
-<ul>
-  {{#each products}}
-    <li>
-      <div>ID: {{this.id}}</div>
-      <div>Title: {{this.title}}</div>
-      <div>Price: {{this.price}}</div>
-      <div>Thumbnail: {{this.thumbnail}}</div>
-    </li>
-    <hr>
-  {{/each}}
-</ul>
+<style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;}
+  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+
+{{#if products.length}}
+
+<table class="tg">
+  <thead>
+    <tr>
+      <th class="tg tg-0lax">Title</th>
+      <th class="tg tg-0lax">Price</th>
+      <th class="tg tg-0lax">Thumbnail</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+      <tr>
+        <td class="tg tg-0lax">{{this.title}}</td>
+        <td class="tg tg-0lax">{{this.price}}</td>
+        <td class="tg tg-0lax"><img src={{this.thumbnail}} alt="thumbnail" width="100"></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+{{else}}
+
+  <h1>No hay productos</h1>
+
+{{/if}}
+
+<button type="button" onclick="window.location.replace('http://localhost:8080/');">Ir a Formulario</button>

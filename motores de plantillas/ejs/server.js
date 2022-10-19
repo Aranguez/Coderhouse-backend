@@ -17,15 +17,13 @@ app.get('/', (req, res) => {
 
 app.get('/productos', (req, res) => {
   const products = Productos.getAll();
-  console.log('products', products);
   res.render('products', { layout: false, products });
 });
 
 app.post('/productos', (req, res) => {
-  console.log('req.body', req.body);
   const nuevoProducto = { ...req.body, id: Productos.getAll().length + 1 };
   Productos.add(nuevoProducto)
-  res.redirect('/productos');
+  res.redirect('/');
 });
 
 const PORT = process.env.PORT || 8080;

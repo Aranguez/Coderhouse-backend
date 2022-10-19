@@ -1,8 +1,29 @@
-<ul>
-  <% products.forEach(function(product){ %>
-    <li>
-      <%- include('../partials/product', { product }); %>
-    </li>
-  <% }); %>
-  <hr>
-</ul>
+<style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;}
+  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+
+<% if(products.length){ %>
+  <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg tg-0lax">Title</th>
+        <th class="tg tg-0lax">Price</th>
+        <th class="tg tg-0lax">Thumbnail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach(function(product) { %>
+        <%- include('../partials/product', { product }); %>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h1>No hay productos</h1>
+<% } %>
+
+<button type="button" onclick="window.location.replace('http://localhost:8080/');">Ir a Formulario</button>

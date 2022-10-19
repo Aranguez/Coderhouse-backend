@@ -1,6 +1,5 @@
-<div>
-  <p>ID: <%= product.id %></p>
-  <p>Title: <%= product.title %></p>
-  <p>Price: <%= product.price %></p>
-  <p>Thumbnail: <%= product.thumbnail %></p>
-</div>
+<tr>
+  <td class="tg tg-0lax"><%= product.title %></td>
+  <td class="tg tg-0lax"><%= product.price %></td>
+  <td class="tg tg-0lax"><img src=<%= product.thumbnail %> alt="thumbnail" width="100"></td>
+</tr>
