@@ -5,7 +5,7 @@ import { CartDao, ProductDao } from "../../Dao/index.js";
 const router = Router();
 
 // OK
-router.post('/', async (req, res) => {
+router.post('/', cartExists, async (req, res) => {
   try {
     const baseCart = { products: [], timestamp: Date.now() }
     const cart = await CartDao.save(baseCart);

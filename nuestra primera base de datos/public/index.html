@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="index.css">
+  <title>Mercado libre App</title>
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <h1>Mercado libre</h1>
+    </div>
+  </nav>
+  <div class="container">
+
+    <section>
+      <h3>Agregar producto</h3>
+      <form action="/api/products" method="post">
+        <input type="text" name="title" placeholder="title" required>
+        <input type="text" name="description" placeholder="description" required>
+        <input type="text" name="price" placeholder="price" required>
+        <input type="text" name="thumnail" placeholder="thumnail" required>
+        <input type="text" name="stock" placeholder="stock" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+
+    <section>
+      <h3>Productos</h3>
+      <div id="products-table"></div>
+    </section>
+
+    <section>
+      <h3>Chat</h3>
+      <div class="box" id="messages"></div>
+
+      <input type="text" name="author" id="author" placeholder="Nombre">
+      <input type="text" name="message" id="message" placeholder="Mensaje">
+      <button type="button" onclick="addMessage()">Enviar</button>
+    </section>
+
+  </div>
+
+  <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+  <script src="./js/products.js"></script>
+  <script src="./js/chat.js"></script>
+</body>
+
+
+
+</html>

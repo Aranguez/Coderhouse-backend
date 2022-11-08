@@ -10,7 +10,3 @@ form.addEventListener('submit', function (e) {
     input.value = '';
   }
 });
-
-socket.on('connectedd', data => {
-  console.log(data)
-})
